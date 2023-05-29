@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('navbar');
+});
+
+Route::get('/1', function () {
+    return view('manageInventory.inventory_screen');
+});
+
+Route::get('/2', function () {
+    return view('test');
 });
