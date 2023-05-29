@@ -16,3 +16,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/VendorMainPage', function () {
+    return view('VendorMainPage');
+});
+
+Route::get('/AddVendorPage', function () {
+    return view('AddVendorPage');
+});
+
+Route::get('/ViewVendorPage', function () {
+    return view('ViewVendorPage');
+});
+
+Route::get('/EditVendorPage', function () {
+    return view('EditVendorPage');
+});
+
+Route::get('/WeeklyReportPage', function () {
+    return view('WeeklyReportPage');
+});
+
