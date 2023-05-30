@@ -9,7 +9,7 @@
         <div class="card shadow mb-1">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-borderless" id="dataTable" width="70%" cellspacing="0">
+                    <table class="table table-borderless" id="dataTable">
                         <thead>
                             <tr>
                                 <th>Image</th>
@@ -21,35 +21,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach($data_inventory as $inventory) 
                             <tr>
-                                <td>milo.png</td>
-                                <td>Milo</td>
-                                <td>RM2.00</td>
-                                <td>3</td>
-                                <td><button type="button" class="btn btn-success">edit</button></td>
-                                <td><button type="button" class="btn btn-danger">delete</button></td>
+                                <td><div class="container" style="max-width: 200px;"><img src="{{$inventory->inventory_image}}" class="figure-img img-fluid rounded"></div></td>
+                                <td>{{$inventory->inventory_name}}</td>
+                                <td>{{$inventory->inventory_price}}</td>
+                                <td>{{$inventory->inventory_quantity}}</td>
+                                <td><a href = "inventory/{{$inventory->inventory_id}}/edit" type="button" class="btn btn-success">edit</a></td>
+                                <td><a href = "inventory/{{$inventory->inventory_id}}/confirm" type="button" class="btn btn-danger">delete</a></td>
                             </tr>
-                            <tr>
-                                <td>air.png</td>
-                                <td>air</td>
-                                <td>RM2.00</td>
-                                <td>3</td>
-                                <td><button type="button" class="btn btn-success">edit</button></td>
-                                <td><button type="button" class="btn btn-danger">delete</button></td>
-                            </tr>
-                            <tr>
-                                <td>roti.png</td>
-                                <td>roti</td>
-                                <td>RM2.00</td>
-                                <td>3</td>
-                                <td><button type="button" class="btn btn-success">edit</button></td>
-                                <td><button type="button" class="btn btn-danger">delete</button></td>
-                            </tr>
-                            </tbody>
+                        @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
-        <button type="button" class="btn btn-primary">Confirm</button>
+        <a type="button" class="btn btn-info" href="/inventory/form">+ add item</a>
     </section>
 @endsection 
