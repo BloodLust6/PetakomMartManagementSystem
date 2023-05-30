@@ -19,22 +19,34 @@ Route::get('/', function () {
 
 
 Route::get('/VendorMainPage', function () {
-    return view('VendorMainPage');
+    return view('ManageVendor.VendorMainPage');
 });
 
 Route::get('/AddVendorPage', function () {
-    return view('AddVendorPage');
+    return view('ManageVendor.AddVendorPage');
 });
 
 Route::get('/ViewVendorPage', function () {
-    return view('ViewVendorPage');
+    return view('ManageVendor.ViewVendorPage');
 });
 
 Route::get('/EditVendorPage', function () {
-    return view('EditVendorPage');
+    return view('ManageVendor.EditVendorPage');
 });
 
 Route::get('/WeeklyReportPage', function () {
-    return view('WeeklyReportPage');
+    return view('GenerateReport.WeeklyReportPage');
+});
+
+Route::get('/MonthlyReportPage', function () {
+    return view('GenerateReport.MonthlyReportPage');
+});
+
+Route::get('/YearlyReportPage', function () {
+    return view('GenerateReport.YearlyReportPage');
+});
+
+Route::get('/StockReportPage', function () {
+    return view('GenerateReport.StockReportPage');
 });
 

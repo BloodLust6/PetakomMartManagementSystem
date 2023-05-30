@@ -19,7 +19,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 20vh;
+            height: 30vh;
         }
 
         .container {
@@ -62,16 +62,23 @@
         <h1>Report Page</h1>
 
         <div class="navigation">
-            <a href="#">Weekly</a>
-            <a href="#">Monthly</a>
-            <a href="#">Yearly</a>
-            <a href="#">Stock</a>
+            <a href="/WeeklyReportPage">Weekly</a>
+            <a href="/MonthlyReportPage">Monthly</a>
+            <a href="/YearlyReportPage">Yearly</a>
+            <a href="/StockReportPage">Stock</a>
         </div>
 
         <div class="content-box">
             <!-- Content goes here -->
             
         </div>
+        <br>
+
+        <div class="btn-container text-end">
+                <a href="/WeeklyReportPage" class="btn btn-primary">Back</a>
+                <button type="submit" class="btn btn-primary" id="save_btn">Save</button>
+        </div>
+
     </div>
 
     <!-- Bootstrap core JS-->
