@@ -44,7 +44,7 @@
             <p class="text-center fs-4 fw-semibold">TOTAL PRICE: RM</p>
         </div>
             <div class="float-end px-2 py-2">
-            <a href="pos/pay" type="button" class="btn btn-primary btn-lg">PAY</a>
+            <a href="/pay" type="button" class="btn btn-primary btn-lg">PAY</a>
             </div>  
     </section>
 @endsection 

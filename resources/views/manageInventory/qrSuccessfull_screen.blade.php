@@ -3,7 +3,7 @@
     <section class="bg-dark px-3 py-3">             
                 <div class="p-4 p-lg-5 bg-white rounded-3 text-center">
                     <div class="position-relative">
-                        <div class="position-absolute top-0 end-0"><i class="bi bi-x-lg"></i></div>
+                    <a class="position-absolute top-0 end-0"  href="/pos"><i class="bi bi-x-lg"></i></a>
                     </div>
                     <div class="p-3 m-3 m-lg-5">
                         <h1 class="display-5 pb-5 fw-bold"><i class="bi bi-check-circle"></i></h1>

@@ -36,5 +36,6 @@ Route::post('/inventory/{id}/update','App\Http\Controllers\inventoryController@u
 Route::get('/pos','App\Http\Controllers\inventoryController@pos');
 Route::get('/pay','App\Http\Controllers\inventoryController@pay');
 Route::get('/pay/cash','App\Http\Controllers\inventoryController@cash');
+Route::get('/pay/balance','App\Http\Controllers\inventoryController@balance');
 Route::get('/pay/qr','App\Http\Controllers\inventoryController@qr');
 Route::get('/pay/success','App\Http\Controllers\inventoryController@success');
