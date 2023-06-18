@@ -134,7 +134,7 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/pos">Pos</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">User Management</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Promotion</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Vendor</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/VendorMainPage">Vendor</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Report</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/account/make-opening">Account</a>
                 </div>

@@ -32,8 +32,22 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-//inventory Controller
+//Report Controller
 Route::get('/inventory','App\Http\Controllers\inventoryController@index');
+Route::get('/VendorMainPage','App\Http\Controllers\VendorController@ViewMainPage');
+Route::get('/AddVendorPage','App\Http\Controllers\VendorController@AddVendorPage');
+Route::get('/ViewVendorPage','App\Http\Controllers\VendorController@ViewVendorPage');
+Route::get('/EditVendorPage','App\Http\Controllers\VendorController@EditVendorPage');
+Route::get('/create','App\Http\Controllers\VendorController@create');
+Route::get('/DeleteVendorPage/{id}/delete','App\Http\Controllers\VendorController@delete');
+Route::get('/EditVendorPage/{id}/edit','App\Http\Controllers\VendorController@edit');
+Route::post('/UpdateVendorPage/{id}/update','App\Http\Controllers\VendorController@update');
+Route::get('/WeeklyReportPage','App\Http\Controllers\ReportController@ViewWeeklyReport');
+Route::get('/MonthlyReportPage','App\Http\Controllers\ReportController@ViewMonthlyReport');
+Route::get('/YearlyReportPage','App\Http\Controllers\ReportController@ViewYearlyReport');
+Route::get('/StockReportPage','App\Http\Controllers\ReportController@ViewStockReport');
+
+//inventory Controller
 Route::get('/inventory/form','App\Http\Controllers\inventoryController@form');
 Route::post('/inventory/create','App\Http\Controllers\inventoryController@create');
 Route::get('/inventory/{id}/confirm','App\Http\Controllers\inventoryController@confirm');
@@ -67,3 +81,4 @@ Route::controller(AccountController::class)->group(function () {
     Route::get('/account/get-expenses','getExpenses')->name('getExpenses');
 
 });
+
