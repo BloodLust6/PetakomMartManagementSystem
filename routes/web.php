@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\AccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+//inventory Controller
 Route::get('/inventory','App\Http\Controllers\inventoryController@index');
 Route::get('/inventory/form','App\Http\Controllers\inventoryController@form');
 Route::post('/inventory/create','App\Http\Controllers\inventoryController@create');
@@ -38,11 +41,29 @@ Route::get('/inventory/{id}/delete','App\Http\Controllers\inventoryController@de
 Route::get('/inventory/{id}/edit','App\Http\Controllers\inventoryController@edit');
 Route::post('/inventory/{id}/update','App\Http\Controllers\inventoryController@update');
 
+//purchase Controller
 Route::get('/pos','App\Http\Controllers\purchaseController@pos');
 Route::post('/add','App\Http\Controllers\purchaseController@add');
 Route::get('/pay','App\Http\Controllers\purchaseController@pay');
 
+//transaction Controller
 Route::get('/pay/cash','App\Http\Controllers\transactionController@cash');
 Route::get('/pay/balance','App\Http\Controllers\transactionController@balance');
 Route::get('/pay/qr','App\Http\Controllers\transactionController@qr');
 Route::get('/pay/success','App\Http\Controllers\transactionController@success');
+
+// Account Controller
+Route::controller(AccountController::class)->group(function () {
+    Route::get('/account/make-opening','makeOpening');
+    Route::post('/account/open-register','openRegister');
+    Route::get('/account/view-sales','viewSales');
+    Route::post('/account/close-register','closeRegister');
+    Route::get('/account/view-profit','viewProfit');
+    Route::get('/account/get-profit-data','getProfitData');
+    Route::get('/account/download-statement','downloadStatement');
+    Route::get('/account/view-expenses','viewExpenses');
+    Route::get('/account/add-expenses','addExpenses');
+    Route::post('/account/insert-expenses','insertExpenses');
+    Route::get('/account/get-expenses','getExpenses')->name('getExpenses');
+
+});
