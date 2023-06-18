@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class attendance extends Model
 {
-    use HasFactory;
+    protected $table = 'attendance';
+    protected $primaryKey = 'id';
+    protected $fillable = ['name', 'student_id', 'image', ];
 }

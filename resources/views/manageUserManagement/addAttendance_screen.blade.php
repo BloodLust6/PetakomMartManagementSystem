@@ -1,10 +1,12 @@
+@extends('layout')
+@section('content')
+<section>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Submit Attendance</title>
     <style>
         body {
-            display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -26,7 +28,7 @@
         .form-group input[type="text"],
         .form-group input[type="file"] {
             padding: 10px;
-            width: 100%;
+            width: 30%;
         }
 
         .form-group input[type="submit"] {
@@ -44,7 +46,8 @@
     <div class="container">
         <h1>Submit Attendance</h1>
 
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form action="/attendance/create" method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -52,7 +55,7 @@
 
             <div class="form-group">
                 <label for="student-id">Student ID:</label>
-                <input type="text" id="student-id" name="student-id" required>
+                <input type="text" id="student_id" name="student_id" required>
             </div>
 
             <div class="form-group">
@@ -67,3 +70,5 @@
     </div>
 </body>
 </html>
+</section>
+@endsection 

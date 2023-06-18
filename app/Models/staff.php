@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class staff extends Model
 {
-    use HasFactory;
+    protected $table = 'staff';
+    protected $primaryKey = 'id';
+    protected $fillable = ['name', 'student_id','course_name', 'phone_num', 'email'];
 }
