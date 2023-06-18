@@ -59,30 +59,6 @@
           </tbody>
         </table>
 
-        <br>
-
-        <table class="table text-center">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Item</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Total Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mocha</td>
-              <td>2</td>
-              <td>20.00</td>
-            </tr>
-            <tr class="table-active">
-              <td colspan="3"></td>
-              <td><b>20.00</b></td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
 

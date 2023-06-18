@@ -133,38 +133,6 @@
         </div>
     </div>
 
-    <br>
-
-    <div class="card">
-        <div class="card-body">
-
-            <h4>Detail of Items Sold</h4>
-
-            <table class="table text-center">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Item</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Bread Yusyag</td>
-                    <td>2</td>
-                    <td>RM 30.00</td>
-                  </tr>
-                  <tr class="table-secondary">
-                    <th colspan="3"></th>
-                    <tH>RM 30.00</tH>
-                  </tr>
-                </tbody>
-              </table>
-
-        </div>
-    </div>
 
     <script>
         
