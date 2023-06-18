@@ -78,6 +78,7 @@
         .popup-close:hover {
             color: #555;
         }
+        
     </style>
 </head>
 <body>

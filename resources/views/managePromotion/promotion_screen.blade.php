@@ -42,18 +42,19 @@
 </head>
 <body>
     <h1>Staff List</h1>
-    <button class="add-button" ><a href="{{ route('promotion.add')}} ">Add</button>
+    <button class="add-button" ><a href="{{ route('promotion.add231')}} ">Add321</a></button>
     
     <div class="promotion">
     @foreach($promotion as $promotions)
-        <h3>Title: {{$promotions['title']}}</h3>
+        <h3>{{$promotions['title']}}</h3>
         <p>Description: {{$promotions['description']}}1</p>
-        <p>Start Time: {{$promotions['time_start']}}</p>
-        <p>End Time: {{$promotions['time_end']}}</p>
+        <p>Start Date: {{$promotions['time_start']}}</p>
+        <p>End Date: {{$promotions['time_end']}}</p>
         <div class="actions">
         <button><a href="{{ route('promotion.edit', $promotions['id']) }} ">Edit</a></button>
         <button><a href="{{ route('promotion.delete', $promotions['id']) }}">Delete</a></button>
         </div>
+        <hr>
         @endforeach
     </div>
     

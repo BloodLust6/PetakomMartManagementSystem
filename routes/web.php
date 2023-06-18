@@ -20,27 +20,15 @@ Route::get('/', function () {
 Route::get('/usermanagement', function () {
     return view('manageUserManagement.userManagementCashier_screen');
 });
-// Route::get('/addattendance', function () {
-//     return view('manageUserManagement.addAttendance_screen');
-// });
 Route::get('/staffdetailadmin', function () {
     return view('manageUserManagement.staffDetailsAdmin_screen');
 });
 Route::get('/schedulemenu', function () {
     return view('manageUserManagement.scheduleMenu_screen');
 });
-// Route::get('/schedule', function () {
-//     return view('manageUserManagement.schedule_screen');
-// });
-// Route::get('/schedulea', function () {
-//     return view('manageUserManagement.scheduleAdmin_screen');
-// });
 Route::get('/addschedule', function () {
     return view('manageUserManagement.addschedule_screen');
 });
-// Route::get('/stafflist', function () {
-//     return view('manageUserManagement.stafflist_screen');
-// });
 Route::get('/stafflistadmin', function () {
     return view('manageUserManagement.staffListAdmin_screen');
 });
@@ -62,25 +50,9 @@ Route::get('/attendance', function () {
 Route::get('/usermanagementa', function () {
     return view('manageUserManagement.userManagementAdmin_screen');
 });
-// Route::get('/addpromotion', function () {
-//     return view('managePromotion.addPromotion_screen');
-// });
-
-// Route::get('/promotion', function () {
-//     return view('managePromotion.home_screen');
-// });
-// Route::get('/promotionlist', function () {
-//     return view('managePromotion.promotion_screen');
-// });
-
-
-// Route::get('/announcements', [AnnouncementController::class, 'index'])->name('announcements.index');
-// Route::get('/announcements/create', [AnnouncementController::class, 'create'])->name('announcements.create');
-// Route::post('/announcements', [AnnouncementController::class, 'store'])->name('announcements.store');
-// Route::get('/attendances', 'AttendanceController@index')->name('attendance');
-// Route::get('/schedules', 'ScheduleController@index')->name('schedule');
-// Route::get('/staff', 'StaffController@index')->name('staff');
-// Route::get('/user-management', 'UserController@index')->name('user.management');
+Route::get('/addattendance', function () {
+    return view('manageUserManagement.addAttendance_screen');
+});
 
 Route::get('/1', function () {
     return view('manageInventory.inventory_screen');
@@ -91,15 +63,14 @@ Route::get('/2', function () {
 });
 
 //promotion
-
+Route::get('/promotion/add','App\Http\Controllers\promotionController@addpromotion')->name('promotion.add231');
 Route::get('/promotion','App\Http\Controllers\promotionController@index')->name('promotion');
 Route::get('/promotionadmin','App\Http\Controllers\promotionController@indexAdmin')->name('admin.promotion');
 Route::get('/promotion/{id}/edit','App\Http\Controllers\promotionController@edit')->name('promotion.edit');
 Route::post('/promotion/{id}/update','App\Http\Controllers\promotionController@update');
 Route::get('/promotion/{id}/delete','App\Http\Controllers\promotionController@delete')->name('promotion.delete');
 Route::post('/promotion/create','App\Http\Controllers\promotionController@createAdmin')->name('promotion.create');
-Route::get('/promotion/{id}','App\Http\Controllers\promotionController@Detail')->name('promotion.detail');
-Route::post('/promotion/add','App\Http\Controllers\promotionController@Add')->name('promotion.add');
+Route::get('/promotion/{id}','App\Http\Controllers\promotionController@detail')->name('promotion.detail');
 // Route::get('/promotion','App\Http\Controllers\promotionController@index')->name('admin.attendance');
 
 //attendance

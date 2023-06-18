@@ -11,12 +11,23 @@ class scheduleController extends Controller
     public function index()
     {
         $schedule = schedule::all();
-        return view('manageUserManagement.schedule_screen', ['schedule' => $schedule]);
+        $days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+        $time_header = ['08:00 - 10:00', '10:00 - 12:00', '12:00 - 14:00', '14:00 - 16:00', '16:00 - 18:00'];
+        $times = time::all();
+        return view('manageUserManagement.schedule_screen', ['schedule' => $schedule, 'days' => $days, 'time_header' => $time_header, 'times' => $times]);
     }
 
     public function create(Request $request){
         // dd('test');
-        schedule::create($request->all());
+        $time = time::where('id', $request->time_id)->first();
+
+        $schedule = new schedule();
+        $schedule->name = $request->name;
+        $schedule->student_id = $request->student_id;
+        $schedule->day = $request->day;
+        $schedule->time = $time['time'];
+        $schedule->time_id = $request->time_id;
+        $schedule->save();
         return redirect('/schedule')->with('success', 'New Data Insert');
     }
     public function indexAdmin()

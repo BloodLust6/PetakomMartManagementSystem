@@ -33,7 +33,7 @@
         <h1>User Management Interface</h1>
 
         <div class="button-box">
-            <button class="button" ><a href="{{ route('add.attendace') }}">Attendance</button>
+            <button class="button" onclick="handleAttendance()"></a>Attendance</button>
             <button class="button" onclick="handleSchedule()">Schedule</button>
             <button class="button" onclick="handleStaff()">Staff</button>
         </div>

@@ -57,12 +57,12 @@
                 <input type="text" id="description" name="description" value="{{$promotion->description}}" required>
             </div>
             <div class="form-group">
-                <label for="time_start">Time Start:</label>
-                <input type="text" id="time_start" name="time_start" value="{{$promotion->time_start}}" required>
+                <label for="time_start">Date Start:</label>
+                <input type="date" id="time_start" name="time_start" value="{{$promotion->time_start}}" required>
             </div>
             <div class="form-group">
-                <label for="time_end">Time End:</label>
-                <input type="text" id="time_end" name="time_end" value="{{$promotion->time_end}}" required>
+                <label for="time_end">Date End:</label>
+                <input type="date" id="time_end" name="time_end" value="{{$promotion->time_end}}" required>
             </div>
 
             <button class="button" type="submit">Submit</button>

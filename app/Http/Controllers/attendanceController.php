@@ -12,9 +12,6 @@ class attendanceController extends Controller
         $attendance = new attendance();
         $attendance->name = $request->name;
         $attendance->student_id = $request->student_id;
-        $request->validate([
-            'image' => 'required|image',
-        ]);
         $uploadedFile = $request->file('image');
         $imageData = file_get_contents($uploadedFile->getRealPath());
         $attendance->image = $imageData;
@@ -28,6 +25,7 @@ class attendanceController extends Controller
         return view('manageUserManagement.attendance_screen', ['attendance'=> $staff_detail]);
     }
     public function add(){
+        
         return view('manageUserManagement.addAttendance_screen');   
     }
 }

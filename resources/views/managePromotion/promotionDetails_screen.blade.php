@@ -29,8 +29,8 @@
         <div class="details">
             <h2>{{ $promotiondetails['title'] }}</h2>
             <p>Description: {{ $promotiondetails['description'] }}</p>
-            <p>time Start: {{ $promotiondetails['time_start'] }}</p>
-            <p>Time End: {{ $promotiondetails['time_end'] }}</p>
+            <p>Date Start: {{ $promotiondetails['time_start'] }}</p>
+            <p>Date End: {{ $promotiondetails['time_end'] }}</p>
         </div>
     </div>
 </body>

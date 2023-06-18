@@ -73,8 +73,8 @@
             <tr>
                 <th>Title</th>
                 <th>Description</th>
-                <th>Time Start</th>
-                <th>Time End</th>
+                <th>Date Start</th>
+                <th>Date End</th>
                 <th>Actions</th>
             </tr>
             @foreach($promotion as $promotions)

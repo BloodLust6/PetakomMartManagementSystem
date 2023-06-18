@@ -50,19 +50,19 @@
         {{csrf_field()}}
             <div class="form-group">
                 <label for="title">Title:</label>
-                <input type="text" id="title" name="title" value="{{$promotions->title}}" required>
+                <input type="text" id="title" name="title" required>
             </div>
             <div class="form-group">
                 <label for="description">Description:</label>
-                <input type="text" id="description" name="description" value="{{$promotions->description}}" required>
+                <input type="text" id="description" name="description" required>
             </div>
             <div class="form-group">
-                <label for="time_start">Time Start:</label>
-                <input type="text" id="time_start" name="time_start" value="{{$promotions->time_start}}" required>
+                <label for="time_start">Date Start:</label>
+                <input type="date" id="time_start" name="time_start" required>
             </div>
             <div class="form-group">
-                <label for="time_end">Time End:</label>
-                <input type="text" id="time_end" name="time_end" value="{{$promotions->time_end}}" required>
+                <label for="time_end">Date End:</label>
+                <input type="date" id="time_end" name="time_end"required>
             </div>
 
             <button class="button" type="submit">Submit</button>

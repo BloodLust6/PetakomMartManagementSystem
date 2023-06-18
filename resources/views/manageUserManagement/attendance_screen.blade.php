@@ -5,6 +5,8 @@
 <html>
 <head>
     <title>Attendance List</title>
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
     <style>
         body {
             justify-content: center;
@@ -43,13 +45,13 @@
             </tr>
             @foreach($attendance as $attendances)
             <tr>
-                <td><link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
-                <script type="text/javascript" src="{{ mix('js/app.js') }}"></script></td>
-                <td>{{$attendances['image']}}<img  alt="Attendance Image" width="100"></td>
+                <td>{{ $attendances['created_at']}}</td>
+                <td><img src="data:image/jpeg;base64,{{ base64_encode($attendances['image']) }}" alt="Attendance Image" width="100"></td>
             </tr>
             @endforeach
         </table>
     </div>
+
 </body>
 </html>
 </section>

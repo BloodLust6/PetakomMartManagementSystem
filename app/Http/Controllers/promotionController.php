@@ -11,6 +11,11 @@ class promotionController extends Controller
         promotion::create($request->all());
         return redirect('/promotionadmin')->with('success', 'New Data Insert');
     }
+    public function addpromotion(){
+        $promotion = promotion::all();
+        return view('managePromotion.addPromotion_screen');
+        
+    }
     public function index(){
         $promotion = promotion::all();
         return view('managePromotion.home_screen', ['promotion'=> $promotion]);
@@ -35,15 +40,12 @@ class promotionController extends Controller
         $promotion -> delete($promotion);
         return redirect('/promotionadmin')->with('success', 'Data Delete');
     }
-    public function Detail($id){
+    public function detail($id){
 
         $promotiondetails = promotion::where('id', $id)->first();
         return view('managePromotion.promotionDetails_screen', ['promotiondetails'=> $promotiondetails]);
        
     }
-    public function Add(){
-        return view('managePromotion.addPromotion_screen');
-        
-    }
+   
     
 }
