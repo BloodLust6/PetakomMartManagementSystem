@@ -42,37 +42,6 @@ class inventoryController extends Controller
         $data_inventory = \App\Models\inventory::find($id);
         $data_inventory -> update($request->all());
         return redirect('/inventory')->with('success', 'New Data Update');
-        
-    }
-
-    public function pos(){
-        $data_inventory = \App\Models\inventory::all();
-        return view('manageInventory.pos_screen', ['data_inventory'=> $data_inventory]);
-    }
-
-    public function pay(){
-        $data_inventory = \App\Models\inventory::all();
-        return view('manageInventory.payment_screen', ['data_inventory'=> $data_inventory]);
-    }
-
-    public function cash(){
-        $data_inventory = \App\Models\inventory::all();
-        return view('manageInventory.paymentCash_screen', ['data_inventory'=> $data_inventory]);
-    }
-
-    public function balance(){
-        $data_inventory = \App\Models\inventory::all();
-        return view('manageInventory.balance_screen', ['data_inventory'=> $data_inventory]);
-    }
-
-    public function qr(){
-        $data_inventory = \App\Models\inventory::all();
-        return view('manageInventory.paymentQr_screen', ['data_inventory'=> $data_inventory]);
-    }
-
-    public function success(){
-        $data_inventory = \App\Models\inventory::all();
-        return view('manageInventory.qrSuccessfull_screen', ['data_inventory'=> $data_inventory]);
     }
 
 }

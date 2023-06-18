@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,16 +15,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('navbar');
+    return view('welcome');
 });
 
-Route::get('/1', function () {
-    return view('manageInventory.inventory_screen');
+Route::get('/dashboard', function () {
+    return view('home');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/2', function () {
-    return view('test');
-});
+require __DIR__.'/auth.php';
 
 Route::get('/inventory','App\Http\Controllers\inventoryController@index');
 Route::get('/inventory/form','App\Http\Controllers\inventoryController@form');
@@ -33,9 +38,11 @@ Route::get('/inventory/{id}/delete','App\Http\Controllers\inventoryController@de
 Route::get('/inventory/{id}/edit','App\Http\Controllers\inventoryController@edit');
 Route::post('/inventory/{id}/update','App\Http\Controllers\inventoryController@update');
 
-Route::get('/pos','App\Http\Controllers\inventoryController@pos');
-Route::get('/pay','App\Http\Controllers\inventoryController@pay');
-Route::get('/pay/cash','App\Http\Controllers\inventoryController@cash');
-Route::get('/pay/balance','App\Http\Controllers\inventoryController@balance');
-Route::get('/pay/qr','App\Http\Controllers\inventoryController@qr');
-Route::get('/pay/success','App\Http\Controllers\inventoryController@success');
+Route::get('/pos','App\Http\Controllers\purchaseController@pos');
+Route::post('/add','App\Http\Controllers\purchaseController@add');
+Route::get('/pay','App\Http\Controllers\purchaseController@pay');
+
+Route::get('/pay/cash','App\Http\Controllers\transactionController@cash');
+Route::get('/pay/balance','App\Http\Controllers\transactionController@balance');
+Route::get('/pay/qr','App\Http\Controllers\transactionController@qr');
+Route::get('/pay/success','App\Http\Controllers\transactionController@success');

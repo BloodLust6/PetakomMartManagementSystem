@@ -13,11 +13,9 @@ return new class extends Migration
     {
         Schema::create('transaction', function (Blueprint $table) {
             $table->id('transaction_id');
+            $table->integer('purchase_id');
             $table->string('transaction_type');
-            $table->double('transaction_amount');
-            $table->date('transaction_date');
-            $table->integer('inventory_id');
-            $table->integer('transaction_quantity');
+            $table->float('transaction_amount');
             $table->timestamps();
         });
     }

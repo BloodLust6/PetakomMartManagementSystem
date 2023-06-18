@@ -9,42 +9,44 @@
         <div class="card shadow mb-1">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <a href = "/pay" class="btn btn-primary bg-primary">PAY</a>
+                    <table class="table table-bordered" id="myTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Image</th>
-                                <th>Item Name</th>
-                                <th>Item Price (RM)</th>
+                                <th>Item</th>
                                 <th>Quantity</th>
+                                <th>Transaction</th>
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($data_inventory as $inventory) 
+                        <!--Form-->
+                        <form action="/add" method="POST">
+                        {{csrf_field()}}
                             <tr>
-                                <td><div class="container" style="max-width: 200px;"><img src="{{$inventory->inventory_image}}" class="figure-img img-fluid rounded"></div></td>
-                                <td>{{$inventory->inventory_name}}</td>
-                                <td>{{$inventory->inventory_price}}</td>
-                                <td class="cart-product-quantity" width="130px">
-                                <div class="input-group quantity">
-                                    <div class="input-group-prepend decrement-btn" style="cursor: pointer">
-                                        <span class="input-group-text">-</span>
-                                    </div>
-                                    <input type="text" class="qty-input form-control" maxlength="2" max="10" value="{{$inventory->inventory_quantity}}">
-                                    <div class="input-group-append increment-btn" style="cursor: pointer">
-                                        <span class="input-group-text">+</span>
-                                    </div>
-                                </div>
-                                </td>
+                            <td>
+                                <select name="inventory_id" class="form-select" id="inputGroupSelect01">
+                                <option selected required>Select Inventory ID</option>
+                                @foreach($data_inventory as $inventory) 
+                                    <option value="{{$inventory->inventory_id}}">{{$inventory->inventory_name}}</option>
+                                @endforeach
+                                </select>
+                            </td>
+                            <td>
+                                <input name="purchase_quantity" type="quantity" class="form-control" id="quantity" placeholder="Insert quantity" required>
+                            </td>
+                            <td>
+                                <input name="transaction_id" type="id" class="form-control" id="quantity" placeholder="Insert id" required>
+                            </td>
                             </tr>
-                            @endforeach
-                            </tbody>
+                        </tbody>
                     </table>
                 </div>
             </div>
-            <p class="text-center fs-4 fw-semibold">TOTAL PRICE: RM</p>
         </div>
-            <div class="float-end px-2 py-2">
-            <a href="/pay" type="button" class="btn btn-primary btn-lg">PAY</a>
-            </div>  
+                        <div class="float-end px-2 py-2">
+                        <button type="submit" class="btn btn-primary bg-primary btn-lg">+ ADD ITEM</button>
+                        </div>
+                        </form>  
+                    
     </section>
 @endsection 

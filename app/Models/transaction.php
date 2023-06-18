@@ -10,5 +10,5 @@ class transaction extends Model
     use HasFactory;
     protected $table = 'transaction';
     protected $primaryKey = 'transaction_id';
-    protected $fillable = ['transaction_type', 'transaction_amount', 'transaction_date', 'inventory_id', 'transaction_quantity'];
+    protected $fillable = ['purchase_id', 'transaction_type', 'transaction_amount'];
 }

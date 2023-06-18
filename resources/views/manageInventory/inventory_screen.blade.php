@@ -27,8 +27,8 @@
                                 <td>{{$inventory->inventory_name}}</td>
                                 <td>{{$inventory->inventory_price}}</td>
                                 <td>{{$inventory->inventory_quantity}}</td>
-                                <td><a href = "inventory/{{$inventory->inventory_id}}/edit" type="button" class="btn btn-success">edit</a></td>
-                                <td><a href = "inventory/{{$inventory->inventory_id}}/confirm" type="button" class="btn btn-danger">delete</a></td>
+                                <td><a href = "inventory/{{$inventory->inventory_id}}/edit" type="button" class="btn btn-success bg-success">edit</a></td>
+                                <td><a href = "inventory/{{$inventory->inventory_id}}/confirm" type="button" class="btn btn-danger bg-danger">delete</a></td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -36,6 +36,6 @@
                 </div>
             </div>
         </div>
-        <a type="button" class="btn btn-info" href="/inventory/form">+ add item</a>
+        <a type="button" class="btn btn-info bg-info" href="/inventory/form">+ add item</a>
     </section>
 @endsection 
