@@ -12,6 +12,7 @@ class CreateVendorsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('contact_number');
+            $table->string('type_vendor');
             $table->string('item');
             $table->timestamps();
         });

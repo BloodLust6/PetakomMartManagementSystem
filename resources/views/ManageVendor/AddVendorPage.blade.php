@@ -1,43 +1,16 @@
+@extends('layout')
+@section('content')
 <!DOCTYPE html>
 <html>
 <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Add Vendor Form</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="" />
-        <!-- Bootstrap icons-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
-        <!-- SweetAlert2 CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.min.css">
-        <style>
-            body {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-            }
-
-            .container {
-                text-align: left;
-            }
-
-            h1 {
-                font-size: 24px;
-                margin-bottom: 30px;
-            }
-        </style>
+        
 </head>
 <body>
     <div class="container">
         <h1>Add Vendor Form</h1>
 
-        <form>
-            @csrf
+        <form action="/create" method="GET">
+        {{csrf_field()}}
 
             <!-- Vendor Name -->
             <div class="form-group row">
@@ -61,7 +34,7 @@
             <div class="form-group row">
                 <label for="vendor_type" class="col-sm-2 col-form-label">Type of Vendor</label>
                 <div class="col-sm-10">
-                    <select class="form-control" id="vendor_type" name="vendor_type" required>
+                    <select class="form-control" id="type_vendor" name="type_vendor" required>
                         <option value="">Select vendor type</option>
                         <option value="Food">Food</option>
                         <option value="Beverage">Beverage</option>
@@ -75,7 +48,7 @@
             <div class="form-group row">
                 <label for="vendor_item" class="col-sm-2 col-form-label">Vendor Item</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="vendor_item" name="vendor_item" placeholder="Enter vendor item" rows="3" required></textarea>
+                    <textarea class="form-control" id="item" name="item" placeholder="Enter vendor item" rows="3" required></textarea>
                 </div>
             </div>
             <br>
@@ -93,21 +66,7 @@
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.min.js"></script>
     <!-- Custom script -->
-    <script>
-        document.getElementById('add_vendor_btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            Swal.fire({
-                icon: 'success',
-                title: 'Vendor Added',
-                text: 'Vendor has been successfully added!',
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "/VendorMainPage";
-                }
-            });
-        });
-    </script>
+
 </body>
 </html>
+@endsection

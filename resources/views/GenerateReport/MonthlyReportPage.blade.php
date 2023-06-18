@@ -1,3 +1,5 @@
+@extends('layout')
+@section('content')
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,12 +17,6 @@
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.min.css">
     <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 30vh;
-        }
 
         .container {
             text-align: left;
@@ -59,7 +55,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Report Page</h1>
+        <h1>Monthly Report Page</h1>
 
         <div class="navigation">
             <a href="/WeeklyReportPage">Weekly</a>
@@ -89,3 +85,4 @@
     </script>
 </body>
 </html>
+@endsection
