@@ -1,11 +1,11 @@
-@extends('ManageAccount.layout')
+@extends('layout')
 
 @section('content')
     
     {{-- Open Register button --}}
     <div class="card" style="height: 80vh;">
         <div class="card-body d-flex align-items-center justify-content-center">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#openCashfloat">
+            <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#openCashfloat">
                 Open Register
             </button>
         </div>
@@ -19,7 +19,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">Opening Cash Float</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close-dark " data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                
@@ -87,8 +87,8 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-secondary bg-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary bg-primary">Submit</button>
             </div>
         </div>
         </div>

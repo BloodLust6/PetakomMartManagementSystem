@@ -1,4 +1,4 @@
-@extends('ManageAccount.layout')
+@extends('layout')
 
 @section('content')
 

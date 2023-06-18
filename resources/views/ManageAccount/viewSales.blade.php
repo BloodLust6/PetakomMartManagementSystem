@@ -1,4 +1,4 @@
-@extends('ManageAccount.layout')
+@extends('layout')
 
 @section('content')
 
@@ -78,8 +78,8 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-secondary bg-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary bg-primary">Submit</button>
             </div>
         </div>
         </div>
@@ -90,7 +90,7 @@
         <div class="col">
             <div class="d-flex flex-row-reverse">
                 {{-- Close Register button --}}
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#closeCashfloat">
+                <button type="button" class="btn btn-danger bg-danger" data-bs-toggle="modal" data-bs-target="#closeCashfloat">
                     Close Register
                 </button>
             </div>

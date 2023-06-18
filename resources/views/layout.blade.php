@@ -15,6 +15,11 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -131,6 +136,7 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Promotion</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Vendor</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Report</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/account/make-opening">Account</a>
                 </div>
             </div>
             <!-- Page content-->

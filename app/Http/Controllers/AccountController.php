@@ -34,7 +34,7 @@ class AccountController extends Controller
         $account->account_open_datetime = now(); // Set the current date and time
         $account->account_open_amount = $validatedData['account_open_amount'];
         $sales_date = $account->account_open_datetime->toDateString();
-        $sales_amount = Transaction::whereDate('transaction_date', $sales_date)->sum('transaction_amount');
+        $sales_amount = Transaction::whereDate('created_at', $sales_date)->sum('transaction_amount');
 
         // Set the closing values to null for opening
         $account->account_close_datetime = null;
@@ -69,7 +69,7 @@ class AccountController extends Controller
             $sales_date = $account->sales_date;
             
             // Update the sales_amount based on the same sales_date with transaction_date
-            $sales_amount = Transaction::whereDate('transaction_date', $sales_date)
+            $sales_amount = Transaction::whereDate('created_at', $sales_date)
                 ->sum('transaction_amount');
             
             // Update the sales_amount in the account
@@ -95,7 +95,7 @@ class AccountController extends Controller
         if ($account_open_datetime) {
             $sales_date = $account_open_datetime->toDateString();
 
-            $sales_amount = Transaction::whereDate('transaction_date', $sales_date)
+            $sales_amount = Transaction::whereDate('created_at', $sales_date)
                 ->sum('transaction_amount');
         }
 
@@ -132,7 +132,7 @@ class AccountController extends Controller
         $formattedDate = Carbon::createFromFormat('d-m-Y', $date)->toDateString();
 
         // Calculate revenue
-        $revenue = Transaction::whereDate('transaction_date', $formattedDate)
+        $revenue = Transaction::whereDate('created_at', $formattedDate)
             ->sum('transaction_amount');
 
         // Calculate expenses
@@ -164,7 +164,7 @@ class AccountController extends Controller
         $displayDate = Carbon::parse($date)->format('d-m-Y');
 
         // Calculate revenue
-        $revenue = Transaction::whereDate('transaction_date', $formattedDate)
+        $revenue = Transaction::whereDate('created_at', $formattedDate)
             ->sum('transaction_amount');
 
         // Calculate expenses
