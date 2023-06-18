@@ -30,6 +30,7 @@
             margin-bottom: 10px;
         }
     </style>
+    <div class="container">
         <h1>User Management Interface</h1>
 
         <div class="button-box">
@@ -37,7 +38,7 @@
             <button class="button" onclick="handleSchedule()">Schedule</button>
             <button class="button" onclick="handleStaff()">Staff</button>
         </div>
-
+    </div>
     <script>
         function handleAttendance() {
             // Handle attendance button click event
