@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\AccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +40,19 @@ Route::get('/WeeklyReportPage', function () {
     return view('WeeklyReportPage');
 });
 
+
+// Account Controller
+Route::controller(AccountController::class)->group(function () {
+    Route::get('/account/make-opening','makeOpening');
+    Route::post('/account/open-register','openRegister');
+    Route::get('/account/view-sales','viewSales');
+    Route::post('/account/close-register','closeRegister');
+    Route::get('/account/view-profit','viewProfit');
+    Route::get('/account/get-profit-data','getProfitData');
+    Route::get('/account/download-statement','downloadStatement');
+    Route::get('/account/view-expenses','viewExpenses');
+    Route::get('/account/add-expenses','addExpenses');
+    Route::post('/account/insert-expenses','insertExpenses');
+    Route::get('/account/get-expenses','getExpenses')->name('getExpenses');
+
+});
