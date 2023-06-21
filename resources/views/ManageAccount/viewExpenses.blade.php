@@ -1,5 +1,4 @@
 @extends('layout')
-
 @section('content')
 
 <div class="card">
@@ -112,12 +111,5 @@
     }
   });
 }
-
-
-
 </script>
-
-
-
-
 @endsection

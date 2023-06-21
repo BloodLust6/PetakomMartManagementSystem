@@ -62,7 +62,7 @@
             <br>
             <br>
     
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary bg-primary">Submit</button>
             <a href="{{ url('/account/view-expenses') }}" class="btn btn-danger">Back</a>
 
         </form>

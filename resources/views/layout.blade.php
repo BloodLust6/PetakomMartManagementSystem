@@ -132,13 +132,17 @@
                     <a class="list-group-item list-group-item-action list-group-item-pri p-3" href="#!">Home</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/inventory">Inventory</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/pos">Pos</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">User Management</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Promotion</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/usermanagementa">User Management (Admin)</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/usermanagement">User Management (Staff)</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/promotionadmin">Promotion (Admin)</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/promotion">Promotion (Staff)</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/VendorMainPage">Vendor</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Report</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/WeeklyReportPage">Report</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/account/make-opening">Account</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/account/view-expenses">Expenses</a>
                 </div>
             </div>
+        
             <!-- Page content-->
             <div class="container-fluid">
             @yield('content')    
